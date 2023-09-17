@@ -32,7 +32,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittensReturnCorrectValue() {
+    public void getKittensReturnsCorrectValue() {
         feline.getKittens();
         Mockito.verify(feline, Mockito.times(1)).getKittens(1);
     }
