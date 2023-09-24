@@ -1,6 +1,7 @@
 import com.example.Feline;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -20,6 +21,7 @@ public class FelineTest {
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         List<String> actual = feline.eatMeat();
+        Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
         assertEquals(expected, actual);
     }
 
